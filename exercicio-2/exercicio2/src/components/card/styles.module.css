@@ -1,0 +1,33 @@
+.container{
+  background-color: rgba(22, 5, 24, 0.97);
+  border-radius: 1rem;
+  display: flex;
+  gap: 4rem;
+  height: 100%;
+  width: 100%;
+  color: white;
+  margin: 4rem auto;
+  padding: 4rem;
+}
+
+.poster{
+  border: 8px solid #000;
+  box-shadow: 0 12rem 23rem rgba(255, 255, 255, 0.14);
+}
+
+.container h2 {
+  font-size: 2.3rem;
+}
+
+.container p {
+
+  line-height: 1.5;
+  margin: 1.2rem;
+}
+
+.container button {
+  background-color: rgb(15, 15, 70);
+  border:  0;
+  font-size: 2rem;
+  color: white;
+}
