@@ -1,5 +1,6 @@
 import Subtitle from "./subtitle"
-
+import SayMyName from "./components/SayMyname"
+import List from "./components/List"
 export default function App() {
   function soma(a,b){
       return a + b
@@ -20,6 +21,8 @@ export default function App() {
       <p>{one}</p>
       <p>T1 players: {playersT1}</p>
       < Subtitle/>
+      <SayMyName nome="DArius" />
+    <List/>
     </div>
   )
 }
