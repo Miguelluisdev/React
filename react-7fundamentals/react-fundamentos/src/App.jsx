@@ -1,6 +1,8 @@
 import Subtitle from "./subtitle"
 import SayMyName from "./components/SayMyname"
 import List from "./components/List"
+import Form from "./components/Form/form"
+import Condicional from "./components/Condicional/Condicional"
 export default function App() {
   function soma(a,b){
       return a + b
@@ -23,6 +25,10 @@ export default function App() {
       < Subtitle/>
       <SayMyName nome="DArius" />
     <List/>
+
+    < Condicional />
+
+    < Form/>
     </div>
   )
 }
