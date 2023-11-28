@@ -1,5 +1,16 @@
 {
-  "projects": [],
+  "projects": [
+    {
+      "name": "dar",
+      "budget": "4444",
+      "category": {
+        "id": "2",
+        "name": "Desenvolvimento"
+      },
+      "preco": 0,
+      "id": 1
+    }
+  ],
   "categories": [
     {
       "id": 1,
@@ -8,7 +19,7 @@
     {
       "id": 2,
       "name": "Desenvolvimento"
-    },      
+    },
     {
       "id": 3,
       "name": "Design"

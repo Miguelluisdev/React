@@ -1,3 +1,10 @@
+import Message from "../layout/Mensagens";
+
 export default  function Project(){
-  return <h1>Projetos page</h1>
+  return (
+    <div>
+      <h1>Meu projetos</h1>
+      < Message msg="algo" />
+    </div>
+  )
 }
