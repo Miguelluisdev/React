@@ -1,35 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [form, setForm] = useState({
+    "Nome": "",
+    "cursos": "",
+    "ano": ""
+  });
+
+  const handleFormChange = (e) => {
+    const { name, value } = e.target;
+
+    if (name === 'fnome') {
+      setForm({ ...form, "Nome": value });
+    } else if (name === 'fcurso') {
+      setForm({ ...form, "cursos": value });
+    } else if (name === 'fano') {
+      setForm({ ...form, "ano": value });
+    }
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <label>Nome</label>
+      <input type="text" name='fnome' value={form.Nome} onChange={(e) => handleFormChange(e)} />
+
+      <label>curso</label>
+      <input type="text" name='fcurso' value={form.cursos} onChange={(e) => handleFormChange(e)} />
+
+      <label>ano</label>
+      <input type="text" name='fano' value={form.ano} onChange={(e) => handleFormChange(e)} />
+
+      <p>Nome Digitado: {form.Nome}</p>
+      <p>Curso Digitado: {form.cursos}</p>
+      <p>Ano Digitado: {form.ano}</p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
