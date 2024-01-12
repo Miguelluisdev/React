@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import './App.css';
+import Local from "./components/locaStorage"
 
 function App() {
+
   const [form, setForm] = useState({
     "Nome": "",
     "cursos": "",
@@ -34,6 +36,8 @@ function App() {
       <p>Nome Digitado: {form.Nome}</p>
       <p>Curso Digitado: {form.cursos}</p>
       <p>Ano Digitado: {form.ano}</p>
+
+      <Local/>
     </>
   );
 }
