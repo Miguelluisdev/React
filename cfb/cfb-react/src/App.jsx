@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import Local from "./components/locaStorage"
-
+import Calc from "./components/Calc"
 function App() {
 
   const [form, setForm] = useState({
@@ -38,6 +38,8 @@ function App() {
       <p>Ano Digitado: {form.ano}</p>
 
       <Local/>
+
+      <Calc/>
     </>
   );
 }
