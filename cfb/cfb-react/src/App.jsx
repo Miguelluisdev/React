@@ -3,6 +3,7 @@ import './App.css';
 import Local from "./components/locaStorage"
 import Calc from "./components/Calc"
 import Calculadora from './components/Calculadora/Calculadora'
+
 function App() {
 
   const [form, setForm] = useState({
@@ -43,6 +44,9 @@ function App() {
       <Calc/>
 
       <Calculadora/>
+
+      <ticTac/>
+
     </>
   );
 }
