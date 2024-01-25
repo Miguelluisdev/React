@@ -10,8 +10,10 @@ const PostForm = ({ post ,onSuccess}) => {
 
 
   useEffect(() => {
-    setTitle(post.title);
+    if (post){
+      setTitle(post.title);
     setBody(post.body);
+    }
   }, [post]);
   
 
@@ -21,14 +23,28 @@ const PostForm = ({ post ,onSuccess}) => {
     const newPost = {title, body, userId: 1}
 
     try {
-      const response =  await axios.post("https://jsonplaceholder.typicode.com/posts" , newPost)
+      if (post) {
+      
+        const updateUrl = `https://jsonplaceholder.typicode.com/posts/${post.id}`;
+    console.log("Update URL:", updateUrl);
 
-      onSuccess(response.data , "add");
-    } catch (error){
-      console.log("erro ao enviar os dados" , error )
+    const response = await axios.put(updateUrl, newPost);
+    onSuccess(response.data, "update");
+      } else {
+
+        // Adicionar nova postagem
+        const response = await axios.post(
+          "https://jsonplaceholder.typicode.com/posts",
+          newPost
+        );
+        onSuccess(response.data, "add");
+      }
+      setTitle("");
+      setBody("");
+    } catch (error) {
+      console.error("Erro ao enviar postagem:", error);
     }
-  }
-
+  };
   return (
     <>
     <form onSubmit={handleSubmit}>

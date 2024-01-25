@@ -11,6 +11,11 @@ const PostManager = () => {
   const handleSucess = (post, operation) => {
     if (operation === "add"){
       setPost((currentPosts) => [post , ...currentPosts])
+    } else if (operation === "uptade") {
+
+      setPost((currentPosts) =>
+       currentPosts.map((p) => p.id === post.id ? post : p))
+
     }
   }
 
