@@ -50,7 +50,7 @@ const handleEditCancel = () => {
     <div key={post.id} >
       <h1>{post.title}</h1>
       <p>{post.body}</p>
-      <button onClick={handleEdit(post)}  >Editar</button>
+      <button onClick={() => handleEdit(post)}  >Editar</button>
     </div>
   )))}
     </>
