@@ -1,12 +1,22 @@
 import { useState } from "react"
 import axios from "axios"
 
-const PostForm = () => {
+const PostForm = ({onSuccess}) => {
   const [title, setTitle] = useState("")
   const [body, setBody] = useState("")
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const newPost = {title, body, userId: ''}
+
+    try {
+      const response =  await axios.post("https://jsonplaceholder.typicode.com/posts" , newPost)
+
+      onSuccess(response.data , "add");
+    } catch (error){
+      console.log("erro ao enviar os dados" , error )
+    }
   }
 
   return (

@@ -6,6 +6,11 @@ const PostManager = () => {
   const [post , setPost] = useState([])
   const [error, setError] = useState("")
 
+  const handleSucess = (post, operation) => {
+    if (operation === "add"){
+      setPost((currentPosts) => [post , ...currentPosts])
+    }
+  }
 
 
 useEffect(()=>{
@@ -25,7 +30,7 @@ useEffect(()=>{
 
   return (
     <>
-    <PostForm/>
+    <PostForm  onSuccess={handleSucess} />
     <h1>postagens</h1>
   {(post.map((post)=> (
     <div key={post.id} >
