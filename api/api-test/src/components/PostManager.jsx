@@ -5,6 +5,8 @@ import PostForm from "./PostForm"
 const PostManager = () => {
   const [post , setPost] = useState([])
   const [error, setError] = useState("")
+  const [selectedPost , setSelectedPost] = useState(null)
+  const [isEditing , setIsEditing] = useState(false)
 
   const handleSucess = (post, operation) => {
     if (operation === "add"){
@@ -12,6 +14,7 @@ const PostManager = () => {
     }
   }
 
+ 
 
 useEffect(()=>{
   const fetchAxios =  async () => {
@@ -28,15 +31,26 @@ useEffect(()=>{
   fetchAxios()
 }, [])
 
+const handleEdit = (post) => {
+  setSelectedPost(post)
+  setIsEditing(true)
+}
+
+const handleEditCancel = () => {
+  setSelectedPost(null)
+  setIsEditing(false)
+}
+
   return (
     <>
-    <PostForm  onSuccess={handleSucess} />
+    <PostForm post={isEditing ? selectedPost : null} onSuccess={handleSucess} />
+    {isEditing && <button onClick={handleEditCancel} >Cancelar edição</button>}
     <h1>postagens</h1>
   {(post.map((post)=> (
     <div key={post.id} >
       <h1>{post.title}</h1>
       <p>{post.body}</p>
-      <button>Editar</button>
+      <button onClick={handleEdit(post)}  >Editar</button>
     </div>
   )))}
     </>

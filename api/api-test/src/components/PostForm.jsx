@@ -1,14 +1,24 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import axios from "axios"
 
-const PostForm = ({onSuccess}) => {
-  const [title, setTitle] = useState("")
-  const [body, setBody] = useState("")
+// eslint-disable-next-line react/prop-types
+const PostForm = ({ post ,onSuccess}) => {
 
-  const handleSubmit = async (e) => {
+
+  const [title, setTitle] = useState(post?.title || "");
+  const [body, setBody] = useState(post?.body || "");
+
+
+  useEffect(() => {
+    setTitle(post.title);
+    setBody(post.body);
+  }, [post]);
+  
+
+   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const newPost = {title, body, userId: ''}
+    const newPost = {title, body, userId: 1}
 
     try {
       const response =  await axios.post("https://jsonplaceholder.typicode.com/posts" , newPost)
