@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { IoEye, IoEyeOff } from 'react-icons/io5';
 
 interface PasswordInputProps {
-  label: string;
+  label?: string;
 }
 
 const PasswordInput: React.FC<PasswordInputProps> = ({ label }) => {
@@ -27,7 +27,7 @@ const PasswordInput: React.FC<PasswordInputProps> = ({ label }) => {
         <button
           type="button"
           onClick={toggleShowPassword}
-          className="absolute inset-y-0 right-0 pr-3 flex items-center bg-black text-white"
+          className="absolute inset-y-0 right-0 pr-3 flex items-center  text-white"
         >
           {showPassword ? (
             <IoEyeOff className="h-5 w-5 text-gray-500" />

@@ -10,6 +10,7 @@ import { TemaProvider } from './contexts/TemaContext'
 import BarraFerramentas from './components/BarraFerramentas'
 import ExibirPostagens from './components/ExibirPostagens'
 import PasswordInput from './components/PasswordInput/PasswordInput'
+import Contact from './components/Contact/Contact'
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
       </TemaProvider>
       <ExibirPostagens />
       <PasswordInput />
+      <Contact />
     </>
   )
 }
