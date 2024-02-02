@@ -6,9 +6,10 @@ import Greeting from './components/Greeting'
 import ToDo from './components/ToDo'
 import TxtInput from './components/TxtInput'
 import Exercise from './components/Exercise'
-import { TemaContext, TemaProvider } from './contexts/TemaContext'
+import { TemaProvider } from './contexts/TemaContext'
 import BarraFerramentas from './components/BarraFerramentas'
 import ExibirPostagens from './components/ExibirPostagens'
+import PasswordInput from './components/PasswordInput/PasswordInput'
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
 
       </TemaProvider>
       <ExibirPostagens />
+      <PasswordInput />
     </>
   )
 }
