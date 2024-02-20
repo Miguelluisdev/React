@@ -12,6 +12,7 @@ import ExibirPostagens from './components/ExibirPostagens'
 import PasswordInput from './components/PasswordInput/PasswordInput'
 import Contact from './components/Contact/Contact'
 import Form from './components/Form/Form'
+import Churrascometro from './components/TestChurras/Churrascometro'
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
       <ExibirPostagens />
       <PasswordInput />
       <Contact />
+      <Churrascometro/>
     </>
   )
 }
